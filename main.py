@@ -1,5 +1,5 @@
 import hashlib
-from time import time
+import datetime as date
 
 
 class Block:
@@ -22,7 +22,7 @@ class Block:
 
 
 def create_genesis_block():
-    return Block(0, time(), "Genesis Block", "0")
+    return Block(0, date.datetime.now(), "Genesis Block", "0")
 
 
 class Blockchain:
@@ -54,16 +54,16 @@ my_blockchain = Blockchain()
 
 # Add some data to the blockchain
 
-my_blockchain.add_block(Block(1, time(), {"Temperature C°": 35, "Humidity %": 70}, ""))
-my_blockchain.add_block(Block(2, time(), {"Temperature C°": 20, "Humidity %": 50}, ""))
-my_blockchain.add_block(Block(3, time(), {"Temperature C°": 18, "Humidity %": 30}, ""))
+my_blockchain.add_block(Block(1, date.datetime.now(), {"Temperature C°": 35, "Humidity %": 70}, ""))
+my_blockchain.add_block(Block(2, date.datetime.now(), {"Temperature C°": 20, "Humidity %": 50}, ""))
+my_blockchain.add_block(Block(3, date.datetime.now(), {"Temperature C°": 18, "Humidity %": 30}, ""))
 
 """
 i = 1
 while i < 4:
     temperature = input("Enter Temperature: ")
     humidity = input("Enter Humidity: ")
-    my_blockchain.add_block(Block(i, time(), {"Temperature": temperature, "Humidity": humidity}, ""))
+    my_blockchain.add_block(Block(i, date.datetime.now(), {"Temperature": temperature, "Humidity": humidity}, ""))
     i += 1 """
 
 # Print the blockchain
