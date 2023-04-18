@@ -64,7 +64,8 @@ while i < 4:
     temperature = input("Enter Temperature: ")
     humidity = input("Enter Humidity: ")
     my_blockchain.add_block(Block(i, date.datetime.now(), {"Temperature": temperature, "Humidity": humidity}, ""))
-    i += 1 """
+    i += 1
+"""
 
 # Print the blockchain
 for block in my_blockchain.chain:
